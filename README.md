@@ -1,5 +1,5 @@
 # GDUT_anyview_example
-Reference solutions to GDUT anyview problems(data structure)
+Reference solutions to GDUT anyview problems(Data structure)
 ## Chapter
 [第1章](../main/chapter1/README.md)   
 [第2章](../main/chapter2/README.md)  
