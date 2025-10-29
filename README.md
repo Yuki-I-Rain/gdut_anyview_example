@@ -1,6 +1,5 @@
 # gdut_anyview_example
-广东工业大学数据结构anyview参考例子    
-**欢迎讨论**    
+Reference solutions to GDUT anyview problems    
 ## categories  
 [第1章](../main/chapter1/README.md)   
 [第2章](../main/chapter2/README.md)  
