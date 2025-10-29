@@ -10,4 +10,4 @@ Reference solutions to GDUT anyview problems(data structure)
 [第7章](../main/chapter7/README.md)  
 [第8章](../main/chapter8/README.md)  
 ## Contact me
-If you have any suggestions or questions, please feel free to raise them in [issue](https://github.com/Yuki-I-Rain/gdut_anyview_example/issues)
+If you have any suggestions or questions, please feel free to raise them in [issues](https://github.com/Yuki-I-Rain/gdut_anyview_example/issues)
