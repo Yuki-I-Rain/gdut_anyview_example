@@ -1,28 +1,31 @@
 # 第三章
-* 1. [DC03PE03 改写直接插入排序算法](#DC03PE03)
-* 2. [DC03PE06 改进的冒泡排序](#DC03PE06)
-* 3. [DC03PE23 计数排序](#DC03PE23)
+* 1. [DC03PE01](#DC03PE01)
+* 2. [DC03PE03 改写直接插入排序算法](#DC03PE03)
+* 3. [DC03PE06 改进的冒泡排序](#DC03PE06)
+* 4. [DC03PE23 计数排序](#DC03PE23)
 
-##  1. <a name='DC03PE03'></a>DC03PE03 改写直接插入排序算法
+##  1. <a name='DC03PE01'></a>DC03PE01
 ```C
-void InsertSort(RcdSqList &L)
-{ 
-  //直接插入排序，从小到大
+int conflictsOfInsertSort(RcdSqList *L) {
+    int count = 0;
 
-  //在1号位到length号位都有数据，这样就有length个数据
-  for(int i=2;i<L.length+1;i++)//进行length-1次插入，因为默认第一个直接成为一个有序数列
-  {
-    L.rcd[L.length+1].key=L.rcd[i].key;//准备将第i个数值进行插入，设置哨兵
-    int j=i-1;
-    while(L.rcd[L.length+1].key<L.rcd[j].key)//直到哨兵的数值大于或等于rcd[j]
-    {
-      L.rcd[j+1].key=L.rcd[j].key;
-      j--;
+    for (int i = 2; i <= L->length; i++) {
+        if (L->rcd[i].key < L->rcd[i - 1].key) {
+            L->rcd[0] = L->rcd[i];
+            int j = i - 1;
+            while (j >= 1 && L->rcd[0].key < L->rcd[j].key) {
+                L->rcd[j + 1] = L->rcd[j];
+                count++; 
+                j--;
+            }
+            L->rcd[j + 1] = L->rcd[0];
+        }
     }
-    L.rcd[j+1].key=L.rcd[L.length+1].key;
-  }
+
+    return count;
 }
 ```
+##  2. <a name='DC03PE03'></a>DC03PE03 改写直接插入排序算法
 ```C
 void InsertSort(RcdSqList &L)
 { 
@@ -42,7 +45,7 @@ void InsertSort(RcdSqList &L)
   }
 }
 ```
-##  2. <a name='DC03PE06'></a>DC03PE06 改进的冒泡排序
+##  3. <a name='DC03PE06'></a>DC03PE06 改进的冒泡排序
 ```C
 void BubbleSort(RcdSqList &L) { 
 /* 元素比较和交换必须调用以下比较函数和交换函数：*/
@@ -91,7 +94,7 @@ void BubbleSort(RcdSqList &L) {
     */
 }
 ```
-##  3. <a name='DC03PE23'></a>DC03PE23 计数排序
+##  4. <a name='DC03PE23'></a>DC03PE23 计数排序
 ```C
 void CountSort(RcdSqList &L)  // 请自行定义计数数组c，用作排序辅助
 { 
