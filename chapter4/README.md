@@ -1,6 +1,8 @@
 # 第四章
 * 1. [DC04PE04 哈希表中关键字的有序输出](#DC04PE04)
 * 2. [DC04PE15 链地址哈希表的构造](#DC04PE15)
+* 3. [DC04PE30](#DC04PE30)
+* 4. [DC04PE35](#DC04PE35)
 
 ##  1. <a name='DC04PE04'></a>DC04PE04 哈希表中关键字的有序输出
 ```C
@@ -56,4 +58,49 @@ nloop: i++;
     return SUCCESS;
 }
 ```
+##  3. <a name='DC04PE30'></a>DC04PE30
+```C
+int countConflics(LHashTable H) {
+    if (H.rcd == NULL || H.size <= 0) return 0;
 
+    int conflicts = 0;
+
+    for (int i = 0; i < H.size; i++) {
+        Node *p = H.rcd[i];
+        int len = 0;
+
+        while (p != NULL) {
+            len++;
+            p = p->next;
+        }
+
+        if (len > 1) {
+            conflicts += (len - 1);
+        }
+    }
+
+    return conflicts;
+}
+```
+##  4. <a name='DC04PE35'></a>DC04PE35
+```C
+Node* searchLHash(LHashTable H, KeyType key, int &c) {
+    c = 0;
+    if (H.rcd == NULL || H.size <= 0 || H.hash == NULL) return NULL;
+
+    int index = H.hash(key, H.size);  // 计算哈希地址
+    if (index < 0 || index >= H.size) return NULL;
+
+    Node *p = H.rcd[index];
+
+    while (p != NULL) {
+        if (p->r.key == key) {
+            return p;
+        }
+        c++;        // 每检查一个不匹配结点计一次冲突
+        p = p->next;
+    }
+
+    return NULL;    // 查找失败
+}
+```
