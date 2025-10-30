@@ -1,10 +1,10 @@
 # 第四章
 * 1. [DC04PE04 哈希表中关键字的有序输出](#DC04PE04)
 * 2. [DC04PE15 链地址哈希表的构造](#DC04PE15)
-* 3. [DC04PE30](#DC04PE30)
-* 4. [DC04PE35](#DC04PE35)
+* 3. [DC04PE30 计算链地址哈希表中的冲突次数](#DC04PE30)
+* 4. [DC04PE35 在链地址哈希表中查找关键字，并记录查找过程中发生的冲突次数](#DC04PE35)
 
-##  1. <a name='DC04PE04'></a>DC04PE04 哈希表中关键字的有序输出
+##  1. <a name='DC04PE04'></a>DC04PE04  哈希表中关键字的有序输出
 ```C
 void PrintKeys(HashTable ht, void(*print)(StrKeyType)){
   int index, tempIndex;
@@ -22,7 +22,7 @@ void PrintKeys(HashTable ht, void(*print)(StrKeyType)){
   }
 }
 ```
-##  2. <a name='DC04PE15'></a>DC04PE15 链地址哈希表的构造
+##  2. <a name='DC04PE15'></a>DC04PE15  链地址哈希表的构造
 ```C
 int BuildHashTab(ChainHashTab &H, int n, HKeyType es[])
 {  
@@ -58,7 +58,7 @@ nloop: i++;
     return SUCCESS;
 }
 ```
-##  3. <a name='DC04PE30'></a>DC04PE30
+##  3. <a name='DC04PE30'></a>DC04PE30  计算链地址哈希表中的冲突次数
 ```C
 int countConflics(LHashTable H) {
     if (H.rcd == NULL || H.size <= 0) return 0;
@@ -82,7 +82,7 @@ int countConflics(LHashTable H) {
     return conflicts;
 }
 ```
-##  4. <a name='DC04PE35'></a>DC04PE35
+##  4. <a name='DC04PE35'></a>DC04PE35  在链地址哈希表中查找关键字，并记录查找过程中发生的冲突次数
 ```C
 Node* searchLHash(LHashTable H, KeyType key, int &c) {
     c = 0;
