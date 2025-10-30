@@ -1,10 +1,10 @@
 # 第三章
-* 1. [DC03PE01](#DC03PE01)
-* 2. [DC03PE03 改写直接插入排序算法](#DC03PE03)
-* 3. [DC03PE06 改进的冒泡排序](#DC03PE06)
-* 4. [DC03PE23 计数排序](#DC03PE23)
+* 1. [DC03PE01 计算升序直接插入排序中元素移动的次数](#DC03PE01)
+* 2. [DC03PE03 以L.rcd[L.length+1]作为监视哨，改写直接插入排序算法](#DC03PE03)
+* 3. [DC03PE06 改进冒泡排序算法](#DC03PE06)
+* 4. [DC03PE23 计数排序算法](#DC03PE23)
 
-##  1. <a name='DC03PE01'></a>DC03PE01
+##  1. <a name='DC03PE01'></a>DC03PE01  计算升序直接插入排序中元素移动的次数
 ```C
 int conflictsOfInsertSort(RcdSqList *L) {
     int count = 0;
@@ -25,7 +25,7 @@ int conflictsOfInsertSort(RcdSqList *L) {
     return count;
 }
 ```
-##  2. <a name='DC03PE03'></a>DC03PE03 改写直接插入排序算法
+##  2. <a name='DC03PE03'></a>DC03PE03  以L.rcd[L.length+1]作为监视哨，改写直接插入排序算法
 ```C
 void InsertSort(RcdSqList &L)
 { 
@@ -45,7 +45,7 @@ void InsertSort(RcdSqList &L)
   }
 }
 ```
-##  3. <a name='DC03PE06'></a>DC03PE06 改进的冒泡排序
+##  3. <a name='DC03PE06'></a>DC03PE06  改进冒泡排序算法
 ```C
 void BubbleSort(RcdSqList &L) { 
 /* 元素比较和交换必须调用以下比较函数和交换函数：*/
@@ -94,7 +94,7 @@ void BubbleSort(RcdSqList &L) {
     */
 }
 ```
-##  4. <a name='DC03PE23'></a>DC03PE23 计数排序
+##  4. <a name='DC03PE23'></a>DC03PE23  计数排序算法
 ```C
 void CountSort(RcdSqList &L)  // 请自行定义计数数组c，用作排序辅助
 { 
