@@ -117,7 +117,7 @@ void ChangeColor(GTYPE g, int m, int n, char c, int i0, int j0)
   return;
 }
 ```
-##  8. <a name='DC05PE26'></a>DC05PE26 求广义表的长度
+##  8. <a name='DC05PE26'></a>DC05PE26  求广义表的长度
 ```C
 int GListLength(GList L) {
     if (L == NULL) return 0;  // 空表长度为 0
