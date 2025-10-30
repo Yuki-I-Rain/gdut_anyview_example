@@ -6,9 +6,10 @@
 * 5. [DC05PE15 试写出求递归函数F(n)的非递归算法](#DC05PE15Fn)
 * 6. [DC05PE16 试写出求解平方根的非递归算法](#DC05PE16)
 * 7. [DC05PE20 将给定点元素同色区域的颜色进行置换](#DC05PE20)
-* 8. [DC05PE30 求广义表的深度](#DC05PE30)
-* 9. [DC05PE32 判别两个广义表是否相等](#DC05PE32)
-* 10. [DC05PE33 输出广义表中所有原子项及其所在的层次](#DC05PE33) 
+* 8. [DC05PE26 求广义表的长度](#DC05PE26) 
+* 9. [DC05PE30 求广义表的深度](#DC05PE30)
+* 10. [DC05PE32 判别两个广义表是否相等](#DC05PE32)
+* 11. [DC05PE33 输出广义表中所有原子项及其所在的层次](#DC05PE33) 
 
 ##  1. <a name='DC05PE04'></a>DC05PE04 根据给定的递归函数，编写递归算法 
 ```C
@@ -116,7 +117,23 @@ void ChangeColor(GTYPE g, int m, int n, char c, int i0, int j0)
   return;
 }
 ```
-##  8. <a name='DC05PE30'></a>DC05PE30 求广义表的深度
+##  8. <a name='DC05PE26'></a>DC05PE26 求广义表的长度
+```C
+int GListLength(GList L) {
+    if (L == NULL) return 0;  // 空表长度为 0
+
+    int len = 0;
+    GList p = L;
+
+    while (p != NULL) {
+        len++;                // 每个结点代表一个表元素（原子或子表）
+        p = p->un.ptr.tp;     // 移动到下一个表元素
+    }
+
+    return len;
+}
+```
+##  9. <a name='DC05PE30'></a>DC05PE30 求广义表的深度
 ```C
 int GListDepth(GList ls) 
 { 
@@ -130,7 +147,7 @@ int GListDepth(GList ls)
   return h1>=h2?h1:h2;
 }
 ```
-##  9. <a name='DC05PE32'></a>DC05PE32 判别两个广义表是否相等
+##  10. <a name='DC05PE32'></a>DC05PE32 判别两个广义表是否相等
 ```C
 Status Equal(GList A, GList B) 
 { 
@@ -155,7 +172,7 @@ Status Equal(GList A, GList B)
   return r1&&r2;
 }
 ```
-##  10. <a name='DC05PE33'></a>DC05PE33 输出广义表中所有原子项及其所在的层次
+##  11. <a name='DC05PE33'></a>DC05PE33 输出广义表中所有原子项及其所在的层次
 ```C
 void OutAtom(GList A, int layer, void(*Out2)(char, int)) 
 { 
