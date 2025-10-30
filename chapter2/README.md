@@ -31,6 +31,11 @@
 * 30. [DC02PE88  试写一算法，在带头结点单链表删除第i元素起的所有元素。](#DC02PE88i)
 * 31. [DC02PE90  删除带头结点单链表中所有值为x的元素](#DC02PE90x)
 * 32. [DC02PE91  删除带头结点单链表中所有值小于x的元素](#DC02PE91x)
+* 33. [DC02PE93  删除双向链表中的重复节点](#DC02PE93)
+* 34. [DC02PE94  将一条双向链表逆置](#DC02PE94)
+* 35. [DC02PE95  将一条双向循环链表逆置](#DC02PE95)
+* 36. [DC02PE97  双向交错遍历一条双向循环链表](#DC02PE97)
+* 37. [DC02PE98  判断一条类似链表的结构是否为合法的双向循环列表](#DC02PE98)
 
 ##  1. <a name='DC02PE03'></a>DC02PE03  实现顺序栈的判空操作  
 ```C
@@ -722,3 +727,138 @@ Status DeleteSome_L(LinkList L, ElemType x)
     return count;
 }
 ```   
+##  33. <a name='DC02PE93'></a>DC02PE93  删除双向链表中的重复节点
+```C
+DuLinkList delDuplicateDuLNodes(DuLinkList L) {
+    // 如果链表为空或头结点不存在，直接返回 NULL
+    if (L == NULL) {
+        return NULL;
+    }
+
+    DuLinkList current = L->next;  // 第一个数据结点
+    DuLinkList p;
+
+    while (current != NULL) {
+        DuLinkList next_node = current->next;  // 保存下一个结点
+
+        // 检查 current->data 是否在前面已出现过
+        p = L->next;
+        int found = 0;
+        while (p != current && p != NULL) {
+            if (p->data == current->data) {
+                found = 1;
+                break;
+            }
+            p = p->next;
+        }
+
+        // 如果前面已经存在相同 data，则删除 current 结点
+        if (found) {
+            // 修改前驱和后继指针
+            current->prior->next = current->next;
+            if (current->next != NULL) {
+                current->next->prior = current->prior;
+            }
+            free(current);
+        }
+        // 否则保留 current（无需操作）
+
+        current = next_node;  // 继续处理下一个结点
+    }
+
+    return L;
+}
+```   
+##  34. <a name='DC02PE94'></a>DC02PE94  将一条双向链表逆置
+```C
+void reverseDuLinkList(DuLinkList L) {
+    if (L == NULL || L->next == NULL) return;
+    DuLNode *p = L->next, *temp = NULL;
+    L->next = NULL;
+    while (p) {
+        temp = p->next;
+        p->next = L->next;
+        if (L->next) L->next->prior = p;
+        p->prior = L;
+        L->next = p;
+        p = temp;
+    }
+}
+```
+##  35. <a name='DC02PE95'></a>DC02PE95  将一条双向循环链表逆置
+```C
+void reverseDuLinkList(DuLinkList L) {
+    if (L == NULL || L->next == NULL) return;
+    DuLNode *p = L->next, *temp = NULL;
+    L->next = NULL;
+    while (p) {
+        temp = p->next;
+        p->next = L->next;
+        if (L->next) L->next->prior = p;
+        p->prior = L;
+        L->next = p;
+        p = temp;
+    }
+}
+```
+##  36. <a name='DC02PE97'></a>DC02PE97  双向交错遍历一条双向循环链表
+```C
+void reverseDuCirLinkList(DuCirLinkList L) {
+    if (!L || L->next == L) return;
+    DuLNode *p = L->next, *temp;
+    while (p != L) {
+        temp = p->next;
+        p->next = p->prior;
+        p->prior = temp;
+        p = temp;
+    }
+    /* 处理头结点指针 */
+    temp = L->next;
+    L->next = L->prior;
+    L->prior = temp;
+}
+```
+##  37. <a name='DC02PE98'></a>DC02PE98  判断一条类似链表的结构是否为合法的双向循环列表
+```C
+Status isLeagalDuCirLinkList(DuCirLinkList L) {
+    /* 特殊规则：若链表不存在，认为合法 */
+    if (!L) return TRUE;
+
+    DuLNode *p = L->next;
+    int count = 0;
+    int vis[256] = {0};
+
+    /* next 方向检查 */
+    while (1) {
+        if (!p) return FALSE;
+        if (p == L) break;
+
+        unsigned char c = (unsigned char)p->data;
+        if (vis[c]) return FALSE;
+        vis[c] = 1;
+        count++;
+
+        if (!p->next || p->next->prior != p) return FALSE;
+
+        p = p->next;
+    }
+
+    /* 只有头结点 */
+    if (count == 0) return TRUE;
+
+    /* prior 方向检查 */
+    DuLNode *q = L->prior;
+    int count2 = 0;
+    while (1) {
+        if (!q) return FALSE;
+        if (q == L) break;
+        count2++;
+
+        if (!q->prior || q->prior->next != q) return FALSE;
+
+        q = q->prior;
+    }
+
+    return count == count2 ? TRUE : FALSE;
+}
+```
