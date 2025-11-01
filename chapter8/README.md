@@ -33,27 +33,32 @@ Status CreateDG(MGraph &G, VexType *vexs, int n,
 ```
 ##  2. <a name='DC08PE15Gkm'></a>DC08PE15 在图G中，相对于k顶点的当前邻接顶点m，求下一个邻接顶点
 ```C
-int NextAdjVex(MGraph G, int k, int m) 
-{   
-  //邻接数组 下一个邻接结点
-  int info;
-  if(G.n==0&&k==0&&m==0) 
-    return 0;
-  if(k<0||k>=G.n)
-    return -1;
-  if(G.kind==UDG||G.kind==DG)
-    info = 0;
-  if(G.kind==UDN||G.kind==DN)
-    info = INFINITY;
-    
-  for(int i=m+1;i<G.n;i++)
-  {
-    if(G.arcs[k][i].adj!=info)
-    {
-      return i;
+int NextAdjVex(MGraph G, int k, int m) {
+    // 输入校验
+    if (k < 0 || k >= G.n || m < 0 || m >= G.n) {
+        return -1;
     }
-  }
-  return -1;
+
+    // 从 m+1 开始查找下一个邻接顶点
+    for (int j = m + 1; j < G.n; j++) {
+        VRType weight = G.arcs[k][j].adj;
+
+        // 根据图的类型判断是否邻接
+        if (G.kind == DG || G.kind == UDG) {
+            // 无权图：adj == 1 表示有边
+            if (weight == 1) {
+                return j;
+            }
+        } else if (G.kind == DN || G.kind == UDN) {
+            // 有权图：adj != 0 且 adj != INFINITY 表示有边
+            if (weight != 0 && weight != INFINITY) {
+                return j;
+            }
+        }
+    }
+
+    // 未找到下一个邻接顶点
+    return -1;
 }
 ``` 
 ##  3. <a name='DC08PE17Gvw'></a>DC08PE17 在图G中设置顶点v到顶点w的弧或边 
@@ -178,4 +183,5 @@ Status CreateUDG(ALGraph &G, VexType *vexs, int n,
   }
   return OK;
 }
+
 ```
