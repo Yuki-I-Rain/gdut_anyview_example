@@ -67,7 +67,7 @@ int PTreeDepth(PTree T)
 {
     int count, maxDep = 0;
     
-    for (int i = 0; i < T.n; i++) { 
+    for (int i = 0; i < T.nodeNum; i++) { 
         count = 0;
         for (int j = i; j >= 0; j = T.nodes[j].parent) 
           count++; 
@@ -141,3 +141,4 @@ int find(MFSet S, int i)
     return root;
 }
 ```
+
