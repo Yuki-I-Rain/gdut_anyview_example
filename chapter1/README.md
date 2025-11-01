@@ -245,13 +245,15 @@ StrSequence* reverseStr(StrSequence* strSeq)
 ##  10. <a name='DC01PE49'></a>DC01PE49 由一维数组构建一个序列
 ```C
 Status CreateSequence(Sequence &S, int n, ElemType *a) { 
-  if(n<=0)
-  {
-    return ERROR;
-  }
-  S.elem=a;
-  S.length=n;
-  return OK;
+   S.elem = (ElemType *)malloc(n * sizeof(ElemType));
+   if (n<=0) {
+      return ERROR;
+   }
+   S.length = n;
+   for (int i = 0; i < n; i++) {
+      S.elem[i]=a[i];
+   }
+   return OK;
 }
 ```
 ##  11. <a name='DC01PE61x'></a>DC01PE61 构建一个值为x的结点
