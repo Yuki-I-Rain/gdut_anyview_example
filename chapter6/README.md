@@ -1,23 +1,23 @@
 # 第六章
-> 这章题目好多，终于赶完了，质量会差，但也应该不会找时间再看了，有什么问题都可以联系我。
+> 这章题目好多，终于赶完了，质量会差，但也应该不会找时间再看了，有什么问题都可以联系我。(@serionago于2021年)
 * 1. [DC06PE01 已知完全二叉树采用顺序存储结构，求编号i和j的两个结点的最近公共祖先结点的编号](#DC06PE01ij)
 * 2. [DC06PE02 对于顺序结构的完全二叉树，判别结点v是否为结点u的子孙](#DC06PE02vu)
 * 3. [DC06PE06 判别两棵二叉树是否相似。](#DC06PE06)
 * 4. [DC06PE11 编写递归算法，求对二叉树T先序遍历时第k个访问的结点的值。](#DC06PE11Tk)
 * 5. [DC06PE12 编写递归算法，计算二叉树T中叶子结点的数目。](#DC06PE12T)
 * 6. [DC06PE21 利用栈及其基本操作，编写二叉树的非递归的先序遍历算法。](#DC06PE21)
-* 7. [DC06PE23 试利用栈及其基本操作，编写二叉树的非递归的后序遍历算法](#DC06PE23)
-* 8. [DC06PE27 二叉树采用三叉链表的存储结构，试编写不借助栈的非递归中序遍历算法。](#DC06PE27)
-* 9. [DC06PE29 编写不用栈辅助的二叉树非递归后序遍历算法](#DC06PE29)
-* 10. [DC06PE30 判别给定两棵二叉树是否相似](#DC06PE30)
+* 7. [DC06PE23 试利用栈及其基本操作，编写二叉树的非递归的后序遍历算法](#DC06PE23) (*题目有变化)
+* 8. [DC06PE27 二叉树采用三叉链表的存储结构，试编写不借助栈的非递归中序遍历算法。](#DC06PE27) (*题目有变化)
+* 9. [DC06PE29 编写不用栈辅助的二叉树非递归后序遍历算法](#DC06PE29) (*题目有变化)
+* 10. [DC06PE30 判别给定两棵二叉树是否相似](#DC06PE30) (*题目有变化)
 * 11. [DC06PE31 利用栈的基本操作，写出先序遍历的非递归形式的算法](#DC06PE31)
 * 12. [DC06PE32 利用栈的基本操作，写出后序遍历的非递归算法](#DC06PE32)
 * 13. [DC06PE33 编写递归算法，将二叉树中所有结点的左、右子树相互交换。](#DC06PE33)
 * 14. [DC06PE34 不使用栈，写出三叉链表的后序遍历的非递归算法](#DC06PE34)
 * 15. [DC06PE35 不使用栈，写出三叉链表的中序遍历的非递归算法](#DC06PE35)
 * 16. [DC06PE36 求以二叉链表存储的完全二叉树的最后一层的最后一个结点](#DC06PE36)
-* 17. [DC06PE37 编写递归算法：求二叉树中以元素值为x的结点为根的子树的深度。](#DC06PE37x)
-* 18. [DC06PE40 对二叉树中每一个结点x，删去以x为根的子树。](#DC06PE40xx)
+* 17. [DC06PE37 编写递归算法：求二叉树中以元素值为x的结点为根的子树的深度。](#DC06PE37x) (*题目有变化)
+* 18. [DC06PE40 对二叉树中每一个结点x，删去以x为根的子树。](#DC06PE40xx) (*题目有变化)
 * 19. [DC06PE43 编写复制一棵二叉树的递归算法。](#DC06PE43)
 * 20. [DC06PE44 编写递归算法，求二叉树中以元素值为x的结点为根的子树的深度](#DC06PE44x)
 * 21. [DC06PE45 编写递归算法，对于二叉树中每一个元素值为x的结点，删去以它为根的子树，并释放相应的空间](#DC06PE45x)
@@ -25,7 +25,7 @@
 * 23. [DC06PE47 利用队列的基本操作，编写按层次顺序(同一层自左至右)遍历二叉树的算法](#DC06PE47)
 * 24. [DC06PE48 已知二叉树中的两个结点，求距离它们最近的共同祖先](#DC06PE48)
 * 25. [DC06PE49 编写算法判别给定二叉树是否为完全二叉树](#DC06PE49)
-* 26. [DC06PE50 判别两棵二叉树是否相等](#DC06PE50)
+* 26. [DC06PE50 判别两棵二叉树是否相等](#DC06PE50) (*疑似有误)
 * 27. [DC06PE51 求二叉树中度为1的结点数目](#DC06PE511)
 * 28. [DC06PE52 求二叉树的分支结点总数](#DC06PE52)
 * 29. [DC06PE53 按层次遍历方式计算二叉树的结点个数](#DC06PE53)
@@ -42,9 +42,10 @@
 * 40. [DC06PE66 从大到小输出给定二叉排序树中所有关键字不小于x的数据元素](#DC06PE66x)
 * 41. [DC06PE67 在二叉查找树中插入一个元素](#DC06PE67)
 * 42. [DC06PE68 求二叉树T中任意两个结点的最近共同祖先。](#DC06PE68T)
-* 43. [DC06PE75 求二叉排序树中第k小的结点的位置](#DC06PE75k)
-* 44. [DC06PE77 求二叉排序树T的深度，并j记录每个结点平衡因子](#DC06PE77Tj)
-* 45. [DC06PE82 平衡二叉排序树的右平衡处理](#DC06PE82)
+* 43. [DC06PE69 将二叉树以字符串形式输出](#DC06PE69T) (*新题目)
+* 44. [DC06PE75 求二叉排序树中第k小的结点的位置](#DC06PE75k)
+* 45. [DC06PE77 求二叉排序树T的深度，并记录每个结点平衡因子](#DC06PE77Tj)
+* 46. [DC06PE82 平衡二叉排序树的右平衡处理](#DC06PE82)
 
 ##  1. <a name='DC06PE01ij'></a>DC06PE01 已知完全二叉树采用顺序存储结构，求编号i和j的两个结点的最近公共祖先结点的编号
 ```C
@@ -272,6 +273,16 @@ void PostOrder(BiTree T, Status (*visit)(TElemType))
     }
 }*/
 ```
+### 新题目(2025)：中序遍历二叉树，输出不小于某关键字的结点值
+```C
+void printNoLessThanKey_InOrder(BiTree T, TElemType k) {
+    if (T == NULL) return;
+    printNoLessThanKey_InOrder(T->lchild, k);
+    if (T->data >= k)
+        printKey(T->data);
+    printNoLessThanKey_InOrder(T->rchild, k);
+}
+```
 ##  8. <a name='DC06PE27'></a>DC06PE27 二叉树采用三叉链表的存储结构，试编写不借助栈的非递归中序遍历算法。
 ```C
 //参考：https://blog.csdn.net/qq1094417747/article/details/52831479
@@ -309,6 +320,16 @@ void InOrder(TriTree PT, Status (*visit)(TElemType))
     }  
 }
 ```
+### 新题目(2025)：先序遍历二叉树，输出不小于某关键字的结点值
+```C
+void printNoLessThanKey_PreOrder(TriTree T, TElemType k) {
+    if (T == NULL) return;
+    if (T->data >= k)
+        printKey(T->data);
+    printNoLessThanKey_PreOrder(T->lchild, k);
+    printNoLessThanKey_PreOrder(T->rchild, k);
+}
+```
 ##  9. <a name='DC06PE29'></a>DC06PE29 编写不用栈辅助的二叉树非递归后序遍历算法
 ```C
 void PostOrder(TriTree T, Status (*visit)(TElemType)) 
@@ -342,6 +363,16 @@ void PostOrder(TriTree T, Status (*visit)(TElemType))
     }
 }
 ```
+### 新题目(2025)：后序遍历二叉树，输出不小于某关键字的结点值
+```C
+void printNoLessThanKey_PostOrder(BiTree T, TElemType k) {
+    if (T == NULL) return;
+    printNoLessThanKey_PostOrder(T->lchild, k);
+    printNoLessThanKey_PostOrder(T->rchild, k);
+    if (T->data >= k)
+        printKey(T->data);
+}
+```
 ##  10. <a name='DC06PE30'></a>DC06PE30 判别给定两棵二叉树是否相似
 ```C
 Status Similar(BiTree t1, BiTree t2) 
@@ -355,6 +386,29 @@ Status Similar(BiTree t1, BiTree t2)
   int r1=Similar(t1->lchild, t2->lchild);
   int r2=Similar(t1->rchild, t2->rchild);
   return r1&&r2;
+}
+```
+### 新题目(2025)：判别给定两棵二叉树是否同构
+```C
+Status isIsomorphic(BiTree T1, BiTree T2) {
+    if (T1 == NULL && T2 == NULL)
+        return TRUE;                  // 两棵树都为空，视为同构
+    if (T1 == NULL || T2 == NULL)
+        return FALSE;                 // 仅一棵为空，不同构
+    if (T1->data != T2->data)
+        return FALSE;                 // 结点数据不同，不同构
+
+    // 情形一：不交换左右子树
+    if (isIsomorphic(T1->lchild, T2->lchild) && 
+        isIsomorphic(T1->rchild, T2->rchild))
+        return TRUE;
+
+    // 情形二：交换左右子树
+    if (isIsomorphic(T1->lchild, T2->rchild) && 
+        isIsomorphic(T1->rchild, T2->lchild))
+        return TRUE;
+
+    return FALSE;                     // 其余情况不同构
 }
 ```
 ##  11. <a name='DC06PE31'></a>DC06PE31 利用栈的基本操作，写出先序遍历的非递归形式的算法
@@ -590,6 +644,27 @@ int Depthx(BiTree T, TElemType x)
   return r1>r2?r1:r2;
 }
 ```
+### 新题目(2025)：编写递归算法，求当前结点的双亲结点
+```C
+TElemType findParent(BiTree T, TElemType data, BiTNode* parent) {
+    if (T == NULL)
+        return '\0';  // 空树或未找到
+    if (T->data == data) {
+        if (parent == NULL)
+            return '\0';  // 根节点无双亲
+        else
+            return parent->data;  // 返回双亲结点的 data 值
+    }
+
+    // 递归查找左子树
+    TElemType res = findParent(T->lchild, data, T);
+    if (res != '\0')
+        return res;
+
+    // 若左子树未找到，则继续查找右子树
+    return findParent(T->rchild, data, T);
+}
+```
 ##  18. <a name='DC06PE40xx'></a>DC06PE40 对二叉树中每一个结点x，删去以x为根的子树。
 ```C
 void NodesDel(BiTree &bt)
@@ -622,6 +697,25 @@ void ReleaseX(BiTree &bt, char x)
       ReleaseX(bt->rchild, x);
     }
     return;
+}
+```
+### 新题目(2025)：编写递归算法，判断某两个结点是否为兄弟。
+```C
+Status isBrother(BiTree T, TElemType dx, TElemType dy) {
+    if (T == NULL)
+        return FALSE;
+
+    // 检查当前结点的左右孩子是否恰好是 dx 和 dy
+    if (T->lchild && T->rchild) {
+        if ((T->lchild->data == dx && T->rchild->data == dy) ||
+            (T->lchild->data == dy && T->rchild->data == dx))
+            return TRUE;
+    }
+
+    // 递归检查左右子树
+    if (isBrother(T->lchild, dx, dy))
+        return TRUE;
+    return isBrother(T->rchild, dx, dy);
 }
 ```
 ##  19. <a name='DC06PE43'></a>DC06PE43 编写复制一棵二叉树的递归算法。
@@ -1284,7 +1378,36 @@ BiTree CommAncestor(BiTree root, TElemType a, TElemType b)
     else return par.ptr;
 }
 ```
-##  43. <a name='DC06PE75k'></a>DC06PE75 求二叉排序树中第k小的结点的位置
+##  43. <a name='DC06PE69T'></a>DC06PE69 将二叉树以字符串形式输出
+```C
+char* BiTree2String(BiTree T) {
+    char *s = (char*)malloc(1024);
+    s[0] = '\0';
+
+    if (T == NULL) {
+        sprintf(s, "#");
+        return s;
+    }
+
+    char *left = BiTree2String(T->lchild);
+    char *right = BiTree2String(T->rchild);
+
+    if (T->lchild == NULL && T->rchild == NULL) {
+        sprintf(s, "%c", T->data);
+    } else if (T->lchild == NULL) {
+        sprintf(s, "%c(#,%s)", T->data, right);
+    } else if (T->rchild == NULL) {
+        sprintf(s, "%c(%s,#)", T->data, left);
+    } else {
+        sprintf(s, "%c(%s,%s)", T->data, left, right);
+    }
+
+    free(left);
+    free(right);
+    return s;
+}
+```
+##  44. <a name='DC06PE75k'></a>DC06PE75 求二叉排序树中第k小的结点的位置
 ```C
 BSTNode *Ranking(BSTree T, int k) 
 { 
@@ -1300,7 +1423,7 @@ BSTNode *Ranking(BSTree T, int k)
         return Ranking(T->rchild,k - T->lsize);//减去左子树T->lsize-1包括结点T一共T->lsize个结点 
 }
 ```
-##  44. <a name='DC06PE77Tj'></a>DC06PE77 求二叉排序树T的深度，并j记录每个结点平衡因子
+##  45. <a name='DC06PE77Tj'></a>DC06PE77 求二叉排序树T的深度，并j记录每个结点平衡因子
 ```C
 int Depth_BF(BBSTree T) 
 {   
@@ -1312,7 +1435,7 @@ int Depth_BF(BBSTree T)
     return 1 + (r1 > r2 ? r1 : r2);
 }
 ```
-##  45. <a name='DC06PE82'></a>DC06PE82 平衡二叉排序树的右平衡处理
+##  46. <a name='DC06PE82'></a>DC06PE82 平衡二叉排序树的右平衡处理
 ```C
 void RightBalance(BBSTree &T) 
 {   
